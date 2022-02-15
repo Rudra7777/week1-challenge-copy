@@ -167,3 +167,20 @@ img {
     height: 60%;
     width: 60%;
 }
+
+#img {
+    height: 60%;
+    width: 60%;
+}
+
+.h2_1 {
+    padding: 1rem;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.h2_2 {
+    padding: 1rem;
+    font-size: 1.5em;
+    font-weight: bold;
+}
