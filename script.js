@@ -68,6 +68,7 @@ p.addEventListener("click", function play() {
             document.getElementById("played_count").innerHTML = count_played;
         } else {
             console.log("Choose")
+            alert("Select your choice");
         }
 
 
