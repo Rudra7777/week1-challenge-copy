@@ -1,8 +1,9 @@
-let num;
+let num = 0;
 var random_number;
 let count_played = 0;
 let count_won = 0;
 let count_lost = 0;
+console.log(num);
 
 /*
     num = 1 means water is selected by user
@@ -62,8 +63,12 @@ z.addEventListener("click", function() {
 var p = document.getElementById("play");
 p.addEventListener("click", function play() {
         random_number = Math.floor((Math.random() * 3) + 1);
-        count_played += 1;
-        document.getElementById("played_count").innerHTML = count_played;
+        if (num == 1 || num == 2 || num == 3) {
+            count_played += 1;
+            document.getElementById("played_count").innerHTML = count_played;
+        } else {
+            console.log("Choose")
+        }
 
 
 
