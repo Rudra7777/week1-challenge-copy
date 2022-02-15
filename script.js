@@ -1,5 +1,9 @@
 let num;
 var random_number;
+let count_played = 0;
+let count_won = 0;
+let count_lost = 0;
+
 /*
     num = 1 means water is selected by user
     num = 2 means fire is selected by user
@@ -57,69 +61,90 @@ z.addEventListener("click", function() {
 
 var p = document.getElementById("play");
 p.addEventListener("click", function play() {
-    random_number = Math.floor((Math.random() * 3) + 1);
+        random_number = Math.floor((Math.random() * 3) + 1);
+        count_played += 1;
+        document.getElementById("played_count").innerHTML = count_played;
 
-    if (num == 1 && random_number == 1) {
-        console.log("Result : TIE!");
-        document.getElementById("img4").style.display = "inline"
-        document.getElementById("img").style.display = "none"
-        document.getElementById("img5").style.display = "none"
-        document.getElementById("img6").style.display = "none"
 
-    } else if (num == 1 && random_number == 2) {
-        console.log("Result : You win!");
-        document.getElementById("img5").style.display = "inline"
-        document.getElementById("img").style.display = "none"
-        document.getElementById("img4").style.display = "none"
-        document.getElementById("img6").style.display = "none"
 
-    } else if (num == 1 && random_number == 3) {
-        console.log("Result : Computer win!");
-        document.getElementById("img6").style.display = "inline"
-        document.getElementById("img").style.display = "none"
-        document.getElementById("img5").style.display = "none"
-        document.getElementById("img4").style.display = "none"
+        if (num == 1 && random_number == 1) {
+            console.log("Result : TIE!");
+            document.getElementById("img4").style.display = "inline"
+            document.getElementById("img").style.display = "none"
+            document.getElementById("img5").style.display = "none"
+            document.getElementById("img6").style.display = "none"
 
-    } else if (num == 2 && random_number == 2) {
-        console.log("Result : TIE!");
-        document.getElementById("img5").style.display = "inline"
-        document.getElementById("img").style.display = "none"
-        document.getElementById("img4").style.display = "none"
-        document.getElementById("img6").style.display = "none"
-    } else if (num == 2 && random_number == 3) {
-        console.log("Result : You win!");
-        document.getElementById("img6").style.display = "inline"
-        document.getElementById("img").style.display = "none"
-        document.getElementById("img4").style.display = "none"
-        document.getElementById("img5").style.display = "none"
 
-    } else if (num == 2 && random_number == 1) {
-        document.getElementById("img4").style.display = "inline"
-        document.getElementById("img").style.display = "none"
-        document.getElementById("img5").style.display = "none"
-        document.getElementById("img6").style.display = "none"
+        } else
+        if (num == 1 && random_number == 2) {
+            console.log("Result : You win!");
+            document.getElementById("img5").style.display = "inline"
+            document.getElementById("img").style.display = "none"
+            document.getElementById("img4").style.display = "none"
+            document.getElementById("img6").style.display = "none"
+            count_won += 1;
+            document.getElementById("won_count").innerHTML = count_won;
 
-        console.log("Result : Computer win!");
-    } else if (num == 3 && random_number == 3) {
-        console.log("Result : TIE!");
-        document.getElementById("img6").style.display = "inline"
-        document.getElementById("img").style.display = "none"
-        document.getElementById("img4").style.display = "none"
-        document.getElementById("img5").style.display = "none"
+        } else if (num == 1 && random_number == 3) {
+            console.log("Result : Computer win!");
+            document.getElementById("img6").style.display = "inline"
+            document.getElementById("img").style.display = "none"
+            document.getElementById("img5").style.display = "none"
+            document.getElementById("img4").style.display = "none"
+            count_lost += 1;
+            document.getElementById("lost_count").innerHTML = count_lost;
 
-    } else if (num == 3 && random_number == 1) {
-        console.log("Result : You win!");
-        document.getElementById("img4").style.display = "inline"
-        document.getElementById("img").style.display = "none"
-        document.getElementById("img5").style.display = "none"
-        document.getElementById("img6").style.display = "none"
+        } else if (num == 2 && random_number == 2) {
+            console.log("Result : TIE!");
+            document.getElementById("img5").style.display = "inline"
+            document.getElementById("img").style.display = "none"
+            document.getElementById("img4").style.display = "none"
+            document.getElementById("img6").style.display = "none"
 
-    } else if (num == 3 && random_number == 2) {
-        console.log("Result : Computer win!");
-        document.getElementById("img5").style.display = "inline"
-        document.getElementById("img").style.display = "none"
-        document.getElementById("img4").style.display = "none"
-        document.getElementById("img6").style.display = "none"
+        } else if (num == 2 && random_number == 3) {
+            console.log("Result : You win!");
+            document.getElementById("img6").style.display = "inline"
+            document.getElementById("img").style.display = "none"
+            document.getElementById("img4").style.display = "none"
+            document.getElementById("img5").style.display = "none"
+            count_won += 1;
+            document.getElementById("won_count").innerHTML = count_won;
 
-    }
-})
+        } else if (num == 2 && random_number == 1) {
+            document.getElementById("img4").style.display = "inline"
+            document.getElementById("img").style.display = "none"
+            document.getElementById("img5").style.display = "none"
+            document.getElementById("img6").style.display = "none"
+            count_lost += 1;
+            document.getElementById("lost_count").innerHTML = count_lost;
+            console.log("Result : Computer win!");
+        } else if (num == 3 && random_number == 3) {
+            console.log("Result : TIE!");
+            document.getElementById("img6").style.display = "inline"
+            document.getElementById("img").style.display = "none"
+            document.getElementById("img4").style.display = "none"
+            document.getElementById("img5").style.display = "none"
+            count_lost += 1;
+            document.getElementById("lost_count").innerHTML = count_lost;
+
+        } else if (num == 3 && random_number == 1) {
+            console.log("Result : You win!");
+            document.getElementById("img4").style.display = "inline"
+            document.getElementById("img").style.display = "none"
+            document.getElementById("img5").style.display = "none"
+            document.getElementById("img6").style.display = "none"
+            count_won += 1;
+            document.getElementById("won_count").innerHTML = count_won;
+
+        } else if (num == 3 && random_number == 2) {
+            console.log("Result : Computer win!");
+            document.getElementById("img5").style.display = "inline"
+            document.getElementById("img").style.display = "none"
+            document.getElementById("img4").style.display = "none"
+            document.getElementById("img6").style.display = "none"
+            count_lost += 1;
+            document.getElementById("lost_count").innerHTML = count_lost;
+
+        }
+    })
+    /*score counter*/
