@@ -130,8 +130,7 @@ p.addEventListener("click", function play() {
             document.getElementById("img").style.display = "none"
             document.getElementById("img4").style.display = "none"
             document.getElementById("img5").style.display = "none"
-            count_lost += 1;
-            document.getElementById("lost_count").innerHTML = count_lost;
+
 
         } else if (num == 3 && random_number == 1) {
             console.log("Result : You win!");
